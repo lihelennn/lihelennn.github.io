@@ -1,0 +1,74 @@
+@font-face {
+ font-family: DUE;
+ src: url("duepuntozero_regular.eot") /* EOT file for IE */
+}
+@font-face {
+ font-family: DUE;
+ src: url("duepuntozero_regular.ttf") /* TTF file for CSS3 browsers */
+}
+
+* {
+	box-sizing: border-box;
+	background-color: #3B3B3B;
+	font-family: DUE;
+	color: #7DBDFF;
+}
+
+body {
+	text-align: center;
+	background-color: #3B3B3B;
+}
+
+img {
+	width: 30%;
+	height: auto;
+}
+
+#formie {
+	font-family: DUE;
+	color: #7DBDFF;
+}
+
+#addLoc {
+  -webkit-border-radius: 22;
+  -moz-border-radius: 22;
+  border-radius: 22px;
+  font-family: DUE;
+  color: #3B3B3B;
+  font-size: 20px;
+  background: #7DBDFF;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+#addLoc:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+#submitbutton {
+  -webkit-border-radius: 22;
+  -moz-border-radius: 22;
+  border-radius: 22px;
+  font-family: DUE;
+  color: #3B3B3B;
+  font-size: 20px;
+  background: #7DBDFF;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+#submitbutton:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}

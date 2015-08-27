@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>Make a CityHunt</title>
+    	<link rel="stylesheet" href="cssform.css" type="text/css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+	</head>
+
+<body>
+	<header>
+			<img src="logo.png" alt="logo"/> <!--WILL NEED TO DESIGN LOGO IMAGE-->
+			<h1 id="level">Make a CityHunt!</h1> <!--TO BE CHANGED TO LEVEL NUM-->
+			
+			<h2 id="goodJob">Get to Know the City</h2>
+			
+			<p id="hint">Fill out this form to make your own hunt.</p> <!--THIS IS THE HINT THAT GETS CHANGED-->
+		<br><br>
+	</header>
+	<form id="formie">
+		Name: <input id="name" type="text" name="" value=""><br><br><br>
+		Place-Latitude: <input id="lat0" type="text" name="" value=""><br><br>
+		Place-Longitude: <input id="lon0" type="text" name="" value=""><br><br>
+		Clue: <input id="c0" type="text" name="" value=""><br><br><br>
+		<input id="submitbutton" type="submit" value="Submit">	
+	</form>
+	<br>
+	<button id="addLoc">Add Another Location</button>
+	
+	<script>
+		Parse.initialize("awnQXrUGXA7So4fYUhJ6voqKunuRy8Cn1LiO4erQ", "PG85c5hyH1P5ZBLEBueSe8lBzE2o9nP05sbQTcB8");
+		
+		//var canRedirect = false;
+		var locnum = 1; 
+		var locArray = [];
+		
+		var NewHunt = Parse.Object.extend("NewHunt");
+		var newHunt = new NewHunt();
+		
+		function classLoc (hint, latitude, longitude) {
+				this.hint = hint;
+				this.latitude = latitude;
+				this.longitude = longitude;
+		}
+		
+		var addForm = function(event) {
+			event.preventDefault();
+			$("#submitbutton").remove();
+			$("#formie").append('Place-Latitude: <input id="lat' + locnum + '" type="text" name="" value=""><br><br>Place-Longitude: <input id="lon' + locnum + '" type="text" name="" value=""><br><br>Clue: <input id="c' + locnum + '" type="text" name="" value=""><br><br><br>');
+			$("#formie").append('<input id="submitbutton" type="submit" value="Submit">');
+			locnum++;
+			$("#submitbutton").click(processdata);
+
+		}
+		
+		//var goBack = function(){
+		//	window.location = "http://lisa.stuy.edu/~helen.li/realCityHunt/NEWmainpage.html";
+		//}
+		
+		var processdata = function(event) {
+			var newHunt = new NewHunt();
+			event.preventDefault();
+			for (var i = 0; i < locnum; i++) {
+				locArray.push(new classLoc($("#c"+i).val(), $("#lat"+i).val(),  $("#lon"+i).val()));
+			}
+			newHunt.save({huntName: $("#name").val(),
+						  huntList: locArray},
+						 {success: function(object) {
+							//$(".success").show();
+							console.log("success");
+							//alert("we submitted it!");
+							$("#formie").append("<br><br>Submitted! Go back to the main page to play.");
+							//$("#submitbutton").click(goBack);
+							//$("body").append("<form method='LINK' action='NEWmainpage.html'><input type='button' value= 'Go back to home page'></form>");
+
+						  },
+						  error: function(model, error) {
+							//$(".error").show();
+							console.log("error");
+						  }
+						}
+						);
+			//canRedirect = true;
+			//while (true) {
+				//if (canRedirect === true) {
+					//window.location = "http://lisa.stuy.edu/~helen.li/realCityHunt/NEWmainpage.html";
+				//}
+			//}
+			//window.open("http://lisa.stuy.edu/~helen.li/realCityHunt/NEWmainpage.html");
+			//window.location = "http://lisa.stuy.edu/~helen.li/realCityHunt/NEWmainpage.html";
+			
+			
+		}
+		
+		
+			
+		
+		$("#submitbutton").click(processdata);
+		$("#addLoc").click(addForm);
+	</script>
+</body>
+
+</html>

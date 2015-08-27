@@ -1,0 +1,1 @@
+#!/usr/bin/pythonprint "content-type: text/html\n"import cgi, cgitbcgitb.enable()form = cgi.FieldStorage()userHuntRequest = str(form.getvalue('nameOfHunt'))print ("""<!DOCTYPE html>	<html>	<body>	<p>""" + userHuntRequest)print ("""</p>	</body>	</html>""")

@@ -1,0 +1,19 @@
+So this is the pitch!! :)))))
+
+1. What it is
+
+CityHunt is a mobile website designed to help people get to know their cities better.
+Users can make or play different scavenger hunts in which players have to find and visit
+real landmarks to proceed to the next level.
+
+2. How it works
+
+If a user makes a scavenger hunt, what they're really doing is entering it to our CityHunt database.
+Each scavenger hunt has levels, which have the following structure: a level number, a hint, and coordinates.
+When a user plays a hunt, they have to go to the place described in the hint and then click the "I am Here" button.
+If their geolocation matches the coordinates for that level, they can move on to the next.
+
+3. Intended Audience
+
+The intended audience is everyone! Because we use coordinates for each level, the hunts can be located anywhere.
+The options for locations are limitless, and so both tourists and locals can use it.

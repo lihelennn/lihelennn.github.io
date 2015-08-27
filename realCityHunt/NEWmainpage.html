@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>CityHunt</title>
+    	<link rel="stylesheet" href="NEWmainpage.css" type="text/css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+	</head> 
+	<body>
+		<header>
+			<img src="logo.png" alt="logo"/> 
+			<h1 id="welcome">Welcome to CityHunt</h1> 
+			<h2 id="subtitle">Get to Know the City</h2>
+			<p id="credits">Created by Stephanie Yoon and Helen Li</p>
+			<br>
+			<p id="description">Each level consists of one place with one hint. Explore the city, and when you think you found it, tap the I'm here! button. If you got it, you will proceed to the next level.</p>
+			<br><br>
+		</header>
+		<form id="goOrMakeForm" action="testform.py" method="get"> <!--Or you can use method='get'-->
+			Name of Hunt: <input type="text" name="nameOfHunt">
+			<br><br>
+			<input id="goInput" type="submit" value="Go">
+			<br><br>
+			<a href="form.html"><input id="makeHuntLink" type="button" value="Make a Hunt"</a>
+		</form>
+	</body>
+<html>
